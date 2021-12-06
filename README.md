@@ -11,6 +11,7 @@ AMADEUS_SECRET='yourclientsecret'
 ```
 
 **NOTE**: Make sure the `.env` file is within the working directory of the `settings.py`.
+**NOTE**: If installing with conda you may have to install `amadeus` and `python-dotenv` using pip after your base python environment is created.
 
 ## Synopsis
 
