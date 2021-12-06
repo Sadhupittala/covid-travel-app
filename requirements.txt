@@ -1,0 +1,25 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: osx-64
+amadeus
+ca-certificates
+certifi
+charset-normalizer
+click
+idna
+libcxx
+libffi
+ncurses
+openssl
+pip
+python
+python-dotenv
+readline
+requests
+setuptools
+sqlite
+tk
+urllib3
+wheel
+xz
+zlib
