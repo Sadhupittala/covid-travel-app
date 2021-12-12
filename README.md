@@ -64,3 +64,56 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   res: dictionary
       returns the data from the site  
       
+####  def get_banned_data(self):
+  get_banned_data: this function get and returns all country's covid information.  
+    
+  ###### Returns
+  -------
+  tuple (of four):
+      returns the tupel contains:
+      1. banned_countries - list of banned countries
+      2. text: dicationary    
+      3. rulles: string that represents the country's rules
+      4. exemptions: string that represents the country's exemptions from above rules
+####   def get_required_docs(self):
+  get_required_docs: this funcation returns all the document information needed.  
+    
+ ##### Returns
+  -------
+  tuple (of three):
+      returns the tupel contains:
+      1. required: list of required documents from teavler 
+      2. text: string
+      3. link: string that represents URL to read more information about needed documents
+
+####  def get_vaccinations(self):
+  get_vaccination: this function returns a list of country's qualified vaccinations.  
+    
+  ##### Returns
+  -------
+  qvac: list of qualified vaccines
+  
+####  def get_test(self):
+  get_test: this function returns whish covid test is needed for entry.  
+    
+ ##### Returns
+  -------
+  test_type: str
+    returns the test type
+    
+####  def get_traveltxt(self):
+  get_traveltxt: str 
+    
+  ##### Returns
+    -------
+  travel_text: str
+    returns data from the original data received from the API
+
+####   def get_risk(self):
+  get_risk: this funcation returns the covid risk level of this country.  
+    
+   ##### Returns
+  -------
+  data: str 
+    returns the risk level 
+
