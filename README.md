@@ -29,7 +29,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   __init__: this constructor initialize country object attributes: name, code, URL, data, area restrictions 
 
   ##### Parameters
-  ----------
+  
   name: str
   country name
   
@@ -37,7 +37,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   Gets the country name
   
   ##### Returns
-  -------
+  
   str: 
       returns country name  
 
@@ -46,12 +46,12 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   get_code: returns the code that matches the given country name
   
   ##### Parameters
-  ----------
+  
   name: str
     country name
 
   ##### Returns
-  -------
+  
   code: str
       returns country code if exsist else return null 
    
@@ -60,7 +60,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   get_data: this function uses amadeus API to get the data from the site  
   
   ##### Returns
-  -------
+  
   res: dictionary
       returns the data from the site  
       
@@ -68,7 +68,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   get_banned_data: this function get and returns all country's covid information.  
     
   ###### Returns
-  -------
+  
   tuple (of four):
       returns the tupel contains:
       1. banned_countries - list of banned countries
@@ -79,7 +79,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   get_required_docs: this funcation returns all the document information needed.  
     
  ##### Returns
-  -------
+  
   tuple (of three):
       returns the tupel contains:
       1. required: list of required documents from teavler 
@@ -90,14 +90,14 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   get_vaccination: this function returns a list of country's qualified vaccinations.  
     
   ##### Returns
-  -------
+  
   qvac: list of qualified vaccines
   
 ####  def get_test(self):
   get_test: this function returns whish covid test is needed for entry.  
     
  ##### Returns
-  -------
+  
   test_type: str
     returns the test type
     
@@ -105,7 +105,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   get_traveltxt: str 
     
   ##### Returns
-  -------
+  
   travel_text: str
     returns data from the original data received from the API
 
@@ -113,7 +113,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   get_risk: this funcation returns the covid risk level of this country.  
     
    ##### Returns
-  -------
+  
   data: str 
     returns the risk level 
     
@@ -125,7 +125,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
    __init__: this constructor initialize travler object attributes: vac. origin, destination. 
 
  ##### Parameters
-  ----------
+  
   vac: boolean
     if person is vacinatated
   origin: str
@@ -138,7 +138,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   is_banned: this method returns if the origin country is banned in destination country.  
 
   ##### Returns
-  -------
+  
   boolean
     returns if origin country is banned in destination country 
      
@@ -168,7 +168,7 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   get_country_list: this function reads the URL and maps the country to its own code from the site
 Gets the list of country with the codes since each country has a two letter code. this is the code that the API uses
 ##### Returns
--------
+
 country_list: dictionary 
  a dictionary where the key is the country name and the value is a code 
  
@@ -176,12 +176,12 @@ country_list: dictionary
  
 get_country: this function returns the country that matches to the given code, if there is no such country it returns the code 
     Parameters
-    ----------
+    
     code: str
       country code
     
 ##### Returns
-  -------
+  
   code: str
       returns country name if exsist else return the code 
       
@@ -189,12 +189,12 @@ get_country: this function returns the country that matches to the given code, i
  
 get_code: this function returns the country code that matches  the given country, if there is no such code it returns null 
 ##### Parameters
-  ----------
+  
   name: str
     country name
     
  ##### Returns
-  -------
+  
   code: str
       returns country code if exsist else return null 
 
@@ -202,7 +202,7 @@ get_code: this function returns the country code that matches  the given country
  print_indent: this function prints indents with bullets or without according the flag bullet
  
   ##### Parameters
-  ----------
+  
   string: str
     the string we want to print
   bullet: boolean
