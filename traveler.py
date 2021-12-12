@@ -14,12 +14,8 @@ from.
 """
 
   def __init__(self, vac, origin, destination):
-    self.vac = vac
-    self.origin = origin
-    self.destination = Country(destination)
-   
-
-  """_init_: this constructor initialize travler object attributes: vac. origin, destination. 
+    
+      """_init_: this constructor initialize travler object attributes: vac. origin, destination. 
    
     Parameters
     ----------
@@ -31,21 +27,33 @@ from.
       the destination country for this travler 
         """
 
-  def is_banned(self):
-    origin_code = get_code(self.origin)
-    banned_countries, text, rules, exemptions = self.destination.get_banned_data()
+    self.vac = vac
+    self.origin = origin
+    self.destination = Country(destination)
+   
 
-    return origin_code in banned_countries
-  
-    """is_banned: this funcation returns if the origin country is banned in destination country.  
+
+  def is_banned(self):
+    
+        """is_banned: this method returns if the origin country is banned in destination country.  
     
     Returns
     -------
     boolean
       returns if origin country is banned in destination country 
     """ 
+    origin_code = get_code(self.origin)
+    banned_countries, text, rules, exemptions = self.destination.get_banned_data()
+
+    return origin_code in banned_countries
+  
+
     
   def can_travel(self):
+    
+     """can_travel: this method prints for the travler if he can travler to destination country, by rule or through exemption.   
+    """ 
+      
     banned_but_vacc = """
     It looks like your country of origin is currently banned from your destination country. 
     But you are vaccinated. 
@@ -73,19 +81,22 @@ from.
 
         print(all_sets) 
         
- """can_travel: this function prints for the travler if he can travler to destination country, by rule or through exemption.   
-    """ 
+
 
   def dest_vaccines(self):
+       """dest_vaccines: this method prints all the accepted vaccinations at the destination.   
+    """ 
     #prints all the accepted vaccinations at the destination
     vaccs = self.destination.get_vaccinations()
     if vaccs is not None:
       secho("The accepted vaccines at the destination country: ")
       for vac in vaccs:
         print_indent(vac)
-    """dest_vaccines: this function prints all the accepted vaccinations at the destination.   
-    """ 
+ 
   def travel_header(self):
+    
+     """travel_header: this method prints the relevant colored header according to results above.    
+    """  
     if self.is_banned():
       header = "You are banned"
       secho(header, fg="white", bg="red")
@@ -93,10 +104,12 @@ from.
       header = "You're all good to travel"
       secho(header, fg="black", bg="green")
       
- """travel_header: this function prints the relevant colored header according to results above.    
-    """   
+ 
 
   def print_travel_risk(self):
+        
+ """print_travel_risk: this method prints a colored massege according to the risk level in destenation country.   
+    """  
     country = self.destination.get_country()
     message = f'Current risk level in {self.destination.get_country()} based on number of COVID cases: '
     risk_level = self.destination.get_risk()
@@ -112,20 +125,22 @@ from.
     
     secho(message, nl=False) ##nl means new line
     secho(risk_level, bg=color)
-    
- """print_travel_risk: this function prints a colored massege according to the risk level in destenation country.   
-    """  
+
 
   def print_accepted_certifs(self):
+     """print_accepted_certifs: this method prints list of approved certificates with indentation.   
+    """ 
     certifs = self.destination.get_certificate()
     secho("These are the accepted proof of vaccination at your destination: ")
     for certif in certifs:
         print_indent(certif)
         
- """print_accepted_certifs: this function prints list of approved certificates with indentation.   
-    """ 
+
 
   def print_travel_info(self):
+       """print_travel_info: this method prints traver's information: if he can travel, risk, needed  vaccination in destenation country
+      and accepted certificates in in destenation country.   
+    """  
     self.can_travel()
     print()
     self.print_travel_risk()
@@ -134,6 +149,4 @@ from.
     print()
     self.print_accepted_certifs()
     
-   """print_travel_info: this funcation prints traver's information: if he can travel, risk, needed  vaccination in destenation country
-      and accepted certificates in in destenation country.   
-    """  
+
