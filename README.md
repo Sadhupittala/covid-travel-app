@@ -64,8 +64,60 @@ The tool will provide users with straightforward, comprehensive, and clear infor
   res: dictionary
       returns the data from the site  
       
-      
-      
+####  def get_banned_data(self):
+  get_banned_data: this function get and returns all country's covid information.  
+    
+  ###### Returns
+  -------
+  tuple (of four):
+      returns the tupel contains:
+      1. banned_countries - list of banned countries
+      2. text: dicationary    
+      3. rulles: string that represents the country's rules
+      4. exemptions: string that represents the country's exemptions from above rules
+####   def get_required_docs(self):
+  get_required_docs: this funcation returns all the document information needed.  
+    
+ ##### Returns
+  -------
+  tuple (of three):
+      returns the tupel contains:
+      1. required: list of required documents from teavler 
+      2. text: string
+      3. link: string that represents URL to read more information about needed documents
+
+####  def get_vaccinations(self):
+  get_vaccination: this function returns a list of country's qualified vaccinations.  
+    
+  ##### Returns
+  -------
+  qvac: list of qualified vaccines
+  
+####  def get_test(self):
+  get_test: this function returns whish covid test is needed for entry.  
+    
+ ##### Returns
+  -------
+  test_type: str
+    returns the test type
+    
+####  def get_traveltxt(self):
+  get_traveltxt: str 
+    
+  ##### Returns
+  -------
+  travel_text: str
+    returns data from the original data received from the API
+
+####   def get_risk(self):
+  get_risk: this funcation returns the covid risk level of this country.  
+    
+   ##### Returns
+  -------
+  data: str 
+    returns the risk level 
+    
+    
  ### class Traveler
  
  #### def __init__(self, vac, origin, destination):
@@ -109,7 +161,51 @@ The tool will provide users with straightforward, comprehensive, and clear infor
 #### def print_travel_info(self):
    print_travel_info: this method prints traver's information: if he can travel, risk, needed  vaccination in destenation country
    and accepted certificates in in destenation country.   
-   
 
-            
+## Utility Functions
+
+#### def get_country_list():
+  get_country_list: this function reads the URL and maps the country to its own code from the site
+Gets the list of country with the codes since each country has a two letter code. this is the code that the API uses
+##### Returns
+-------
+country_list: dictionary 
+ a dictionary where the key is the country name and the value is a code 
+ 
+#### def get_country(code):
+ 
+get_country: this function returns the country that matches to the given code, if there is no such country it returns the code 
+    Parameters
+    ----------
+    code: str
+      country code
+    
+##### Returns
+  -------
+  code: str
+      returns country name if exsist else return the code 
       
+#### def get_code(name):
+ 
+get_code: this function returns the country code that matches  the given country, if there is no such code it returns null 
+##### Parameters
+  ----------
+  name: str
+    country name
+    
+ ##### Returns
+  -------
+  code: str
+      returns country code if exsist else return null 
+
+#### def print_indent(string, bullet=True):
+ print_indent: this function prints indents with bullets or without according the flag bullet
+ 
+  ##### Parameters
+  ----------
+  string: str
+    the string we want to print
+  bullet: boolean
+    a flag represent if we want bullet, the default value is true    
+
+
